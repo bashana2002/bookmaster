@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="648.0" prefWidth="875.0" stylesheets="@../styles/categories.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.projects.library.controller.CategoriesController">
+   <children>
+      <Pane fx:id="topPanel" layoutX="29.0" layoutY="14.0" prefHeight="50.0" prefWidth="817.0">
+         <children>
+            <Label layoutX="28.0" layoutY="10.0" text="Categories" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane fx:id="searchPane" layoutX="366.0" layoutY="88.0" prefHeight="200.0" prefWidth="480.0">
+         <children>
+            <Pane layoutY="-3.0" prefHeight="37.0" prefWidth="480.0" style="-fx-background-color: #253659; -fx-background-radius: 15 0 0 15; -fx-background-radius: 15 15 0 0;">
+               <children>
+                  <Label layoutX="26.0" layoutY="4.0" prefHeight="30.0" prefWidth="113.0" text="Search" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="29.0" layoutY="60.0" text="Name ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearchName" layoutX="106.0" layoutY="58.0" prefHeight="25.0" prefWidth="197.0" promptText="John Doe" />
+            <Label layoutX="29.0" layoutY="94.0" text="Code">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearchCode" layoutX="106.0" layoutY="92.0" prefHeight="25.0" prefWidth="197.0" promptText="C0000" />
+            <HBox alignment="TOP_CENTER" layoutX="41.0" layoutY="147.0" prefHeight="37.0" prefWidth="275.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnSearch" onMouseClicked="#handleSearch" mnemonicParsing="false" text="Search" />
+                  <Button fx:id="btnSearchClear" onMouseClicked="#searchClear" mnemonicParsing="false" text="CLEAR" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="tablePane" layoutX="366.0" layoutY="297.0" prefHeight="336.0" prefWidth="480.0">
+         <children>
+            <Pane prefHeight="37.0" prefWidth="480.0" style="-fx-background-color: #253659; -fx-background-radius: 15 0 0 15; -fx-background-radius: 15 15 0 0;">
+               <children>
+                  <Label layoutX="23.0" layoutY="4.0" prefHeight="30.0" prefWidth="113.0" text="Data View" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="tblCategory" layoutY="37.0" prefHeight="289.0" prefWidth="480.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="75.0" text="#" />
+                <TableColumn fx:id="nameCol" prefWidth="200.0" text="Name" />
+                  <TableColumn fx:id="codeCol" prefWidth="204.0" text="Code" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="formPanel" layoutX="29.0" layoutY="88.0" prefHeight="547.0" prefWidth="322.0">
+         <children>
+            <Label layoutX="22.0" layoutY="60.0" text="Name ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtName" layoutX="99.0" layoutY="58.0" prefHeight="25.0" prefWidth="197.0" promptText="John Doe" />
+            <Label layoutX="22.0" layoutY="94.0" text="Code">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCode" layoutX="99.0" layoutY="92.0" prefHeight="25.0" prefWidth="197.0" promptText="C0000" />
+            <Pane layoutX="1.0" layoutY="-3.0" prefHeight="37.0" prefWidth="322.0" style="-fx-background-color: #253659; -fx-background-radius: 15 0 0 15; -fx-background-radius: 15 15 0 0;">
+               <children>
+                  <Label layoutX="22.0" layoutY="4.0" prefHeight="30.0" prefWidth="113.0" text="Form" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox alignment="TOP_CENTER" layoutX="25.0" layoutY="144.0" prefHeight="37.0" prefWidth="275.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onMouseClicked="#add" text="ADD" />
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onMouseClicked="#update" text="UPDATE" />
+                  <Button fx:id="btnDelete" alignment="TOP_CENTER" mnemonicParsing="false" onMouseClicked="#delete" text="DELETE" />
+                  <Button fx:id="btnClear" mnemonicParsing="false" onMouseClicked="#clearForm" text="CLEAR" textAlignment="CENTER" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <ImageView fitHeight="260.0" fitWidth="317.0" layoutX="45.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/Category.gif" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
